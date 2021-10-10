@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import se331.lab.rest.security.entity.User;
 
 @Data
 @Builder
@@ -20,4 +21,7 @@ public class Organizer {
     @OneToMany(mappedBy = "organizer")
     @Builder.Default
     List<Event> ownEvents = new ArrayList<>();
+    @OneToOne
+    User user;
+
 }
