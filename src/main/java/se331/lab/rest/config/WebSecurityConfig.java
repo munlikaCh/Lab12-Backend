@@ -63,7 +63,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // don't create session
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
-                .antMatchers("/auth/**",  "/refresh").permitAll()
+                .antMatchers("/auth/**", "/refresh", "/registers").permitAll()
                 .antMatchers(HttpMethod.POST,"/events").hasRole("ADMIN")
                 .antMatchers(HttpMethod.GET,"/events").permitAll()
                 .antMatchers(HttpMethod.GET,"/organizers").permitAll()
